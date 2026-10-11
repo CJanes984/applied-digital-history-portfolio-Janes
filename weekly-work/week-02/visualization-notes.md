@@ -27,7 +27,7 @@ For example, 1924 (=1925) would be 1924 but stored as a numerical value. The dec
 8. How are missing values represented?
 
 Missing values lack any data in the dedicated box. They can be easily spotted by simply looking at the chart and looking for the empty boxes.
-Empty boxes do NOT automatically mean that the value is anonymous, rather, the data is just not known or identified.
+Empty boxes do not automatically mean that the value is anonymous, rather, the data is just not known or identified.
 
 9. Are any categories uncertain, inconsistent, or historically constructed?
 
