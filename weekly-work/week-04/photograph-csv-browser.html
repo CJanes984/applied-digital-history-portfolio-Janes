@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historic Photographs Dataset Explorer</title>
+    <style>
+        :root {
+            --primary: #3182ce;
+            --primary-hover: #2b6cb0;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --text: #2d3748;
+            --border: #e2e8f0;
+            --error-bg: #fff5f5;
+            --error-text: #c53030;
+            --focus-ring: #90cdf4;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.5;
+            margin: 0;
+            padding: 1.5rem;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 1.5rem;
+            margin-top: 0;
+            color: var(--primary);
+        }
+
+        p.subtitle {
+            font-size: 0.95rem;
+            color: #4a5568;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Upload Section */
+        .upload-section {
+            border: 2px dashed var(--border);
+            padding: 1.5rem;
+            text-align: center;
+            border-radius: 6px;
+            margin-bottom: 1.5rem;
+            background: #fafafa;
+        }
+
+        input[type="file"] {
+            display: none;
+        }
+
+        .file-upload-btn {
+            background-color: var(--primary);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            display: inline-block;
+            font-weight: 500;
+            transition: background-color 0.2s;
+        }
+
+        .file-upload-btn:hover {
+            background-color: var(--primary-hover);
+        }
+
+        #file-name {
+            margin-top: 0.5rem;
+            font-size: 0.85rem;
+            color: #718096;
+        }
+
+        /* Error Message */
+        .error-message {
+            background-color: var(--error-bg);
+            color: var(--error-text);
+            padding: 1rem;
+            border-radius: 4px;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--error-text);
+            display: none;
+        }
+
+        /* Controls Section */
+        .controls-section {
+            display: none;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            padding: 1rem;
+            background: #f1f5f9;
+            border-radius: 6px;
+            align-items: center;
+        }
+
+        .control-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .control-group label {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #4a5568;
+        }
+
+        .control-group input, .control-group select {
+            padding: 0.5rem;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            font-size: 0.9rem;
+            background: white;
+        }
+
+        .control-group input:focus, .control-group select:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px var(--focus-ring);
+        }
+
+        .record-counter {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #4a5568;
+            margin-left: auto;
+            align-self: flex-end;
+            padding-bottom: 0.5rem;
+        }
+
+        /* Table Section */
+        .table-container {
+            display: none;
+            width: 100%;
+            overflow-x: auto;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            max-height: 600px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.85rem;
+            white-space: nowrap;
+        }
+
+        th, td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+            border-right: 1px solid var(--border);
+        }
+
+        th {
+            background-color: #edf2f7;
+            font-weight: 600;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        th:hover {
+            background-color: #e2e8f0;
+        }
+
+        th span.sort-indicator {
+            margin-left: 0.25rem;
+            font-size: 0.75rem;
+            color: #718096;
+        }
+
+        tr:nth-child(even) {
+            background-color: #fafafa;
+        }
+
+        tr:hover {
+            background-color: #f1f5f9;
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 2rem;
+            color: #718096;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Historic Photographs Dataset Explorer</h1>
+    <p class="subtitle">Search, filter, and sort local photographic metadata securely in your browser.</p>
+
+    <!-- File Input Section -->
+    <div class="upload-section">
+        <label for="csv-file-input" class="file-upload-btn">Choose "historic_photographs_sample_dataset.csv"</label>
+        <input type="file" id="csv-file-input" accept=".csv">
+        <div id="file-name">No file selected</div>
+    </div>
+
+    <!-- Error Banner -->
+    <div id="error-banner" class="error-message"></div>
+
+    <!-- Controls Section -->
+    <div id="controls-section" class="controls-section">
+        <div class="control-group">
+            <label for="search-input">Keyword Search</label>
+            <input type="text" id="search-input" placeholder="Search across all fields...">
+        </div>
+        <div class="control-group">
+            <label for="country-filter">Filter by country_raw</label>
+            <select id="country-filter">
+                <option value="">All Countries</option>
+            </select>
+        </div>
+        <div class="control-group">
+            <label for="object-type-filter">Filter by object_type_raw</label>
+            <select id="object-type-filter">
+                <option value="">All Object Types</option>
+            </select>
+        </div>
+        <div id="record-counter" class="record-counter">Showing 0 of 0 records</div>
+    </div>
+
+    <!-- Table Section -->
+    <div id="table-container" class="table-container">
+        <table id="data-table">
+            <thead>
+                <tr id="table-header-row"></tr>
+            </thead>
+            <tbody id="table-body">
+                <tr><td colspan="100" class="no-results">No data loaded yet.</td></tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script>
+    // State variables
+    let csvHeaders = [];
+    let csvRows = [];
+    let currentSortColumn = null;
+    let currentSortDirection = 'asc';
+
+    // DOM Elements
+    const fileInput = document.getElementById('csv-file-input');
+    const fileNameDisplay = document.getElementById('file-name');
+    const errorBanner = document.getElementById('error-banner');
+    const controlsSection = document.getElementById('controls-section');
+    const tableContainer = document.getElementById('table-container');
+    const tableHeaderRow = document.getElementById('table-header-row');
+    const tableBody = document.getElementById('table-body');
+    const searchInput = document.getElementById('search-input');
+    const countryFilter = document.getElementById('country-filter');
+    const objectTypeFilter = document.getElementById('object-type-filter');
+    const recordCounter = document.getElementById('record-counter');
+
+    // File selection event listener
+    fileInput.addEventListener('change', function(event) {
+        const file = event.target.files[0];
+        if (!file) return;
+
+        fileNameDisplay.textContent = file.name;
+        hideError();
+
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            try {
+                const text = e.target.result;
+                parseAndInitialize(text);
+            } catch (err) {
+                showError("Failed to parse CSV file: " + err.message);
+            }
+        };
+        reader.onerror = function() {
+            showError("Error reading the selected file.");
+        };
+        reader.readAsText(file, "UTF-8");
+    });
+
+    // Robust CSV Parser handling quoted fields and multi-line strings
+    function parseCSV(text) {
+        let lines = [];
+        let currentRow = [];
+        let currentField = '';
+        let inQuotes = false;
+
+        for (let i = 0; i < text.length; i++) {
+            let char = text[i];
+            let nextChar = text[i + 1];
+
+            if (inQuotes) {
+                if (char === '"') {
+                    if (nextChar === '"') {
+                        currentField += '"';
+                        i++;
+                    } else {
+                        inQuotes = false;
+                    }
+                } else {
+                    currentField += char;
+                }
+            } else {
+                if (char === '"') {
+                    inQuotes = true;
+                } else if (char === ',') {
+                    currentRow.push(currentField);
+                    currentField = '';
+                } else if (char === '\r' && nextChar === '\n') {
+                    currentRow.push(currentField);
+                    currentField = '';
+                    lines.push(currentRow);
+                    currentRow = [];
+                    i++;
+                } else if (char === '\n' || char === '\r') {
+                    currentRow.push(currentField);
+                    currentField = '';
+                    lines.push(currentRow);
+                    currentRow = [];
+                } else {
+                    currentField += char;
+                }
+            }
+        }
+        if (currentField !== '' || currentRow.length > 0) {
+            currentRow.push(currentField);
+            lines.push(currentRow);
+        }
+
+        lines = lines.filter(line => line.length > 1 || (line.length === 1 && line[0].trim() !== ''));
+
+        if (lines.length === 0) {
+            throw new Error("The CSV file is empty.");
+        }
+
+        const headers = lines[0].map(h => h.trim());
+        const rows = [];
+
+        for (let i = 1; i < lines.length; i++) {
+            const line = lines[i];
+            const rowObj = {};
+            for (let j = 0; j < headers.length; j++) {
+                rowObj[headers[j]] = line[j] !== undefined ? line[j] : '';
+            }
+            rows.push(rowObj);
+        }
+
+        return { headers, rows };
+    }
+
+    // Process parsed CSV and populate UI
+    function parseAndInitialize(text) {
+        const parsed = parseCSV(text);
+        csvHeaders = parsed.headers;
+        csvRows = parsed.rows;
+
+        const requiredColumns = ['country_raw', 'object_type_raw'];
+        const missingColumns = requiredColumns.filter(col => !csvHeaders.includes(col));
+        if (missingColumns.length > 0) {
+            throw new Error(`Absent expected columns: Missing "${missingColumns.join('", "')}". Please verify your dataset matches "historic_photographs_sample_dataset.csv".`);
+        }
+
+        buildTableHeaders();
+        populateDropdowns();
+        filterAndRender();
+
+        controlsSection.style.display = 'flex';
+        tableContainer.style.display = 'block';
+    }
+
+    // Build Table Header with Sorting Listeners
+    function buildTableHeaders() {
+        tableHeaderRow.innerHTML = '';
+        csvHeaders.forEach(header => {
+            const th = document.createElement('th');
+            th.textContent = header;
+            
+            const indicator = document.createElement('span');
+            indicator.className = 'sort-indicator';
+            indicator.id = `sort-${header}`;
+            th.appendChild(indicator);
+
+            th.addEventListener('click', () => {
+                handleSort(header);
+            });
+            tableHeaderRow.appendChild(th);
+        });
+    }
+
+    // Populate Dropdown Filters
+    function populateDropdowns() {
+        const countries = new Set();
+        const objectTypes = new Set();
+
+        csvRows.forEach(row => {
+            if (row['country_raw']) countries.add(row['country_raw']);
+            if (row['object_type_raw']) objectTypes.add(row['object_type_raw']);
+        });
+
+        countryFilter.innerHTML = '<option value="">All Countries</option>';
+        Array.from(countries).sort().forEach(val => {
+            const opt = document.createElement('option');
+            opt.value = val;
+            opt.textContent = val;
+            countryFilter.appendChild(opt);
+        });
+
+        objectTypeFilter.innerHTML = '<option value="">All Object Types</option>';
+        Array.from(objectTypes).sort().forEach(val => {
+            const opt = document.createElement('option');
+            opt.value = val;
+            opt.textContent = val;
+            objectTypeFilter.appendChild(opt);
+        });
+    }
+
+    // Handle Sorting Logic
+    function handleSort(column) {
+        if (currentSortColumn === column) {
+            currentSortDirection = currentSortDirection === 'asc' ? 'desc' : 'asc';
+        } else {
+            currentSortColumn = column;
+            currentSortDirection = 'asc';
+        }
+
+        csvHeaders.forEach(h => {
+            const ind = document.getElementById(`sort-${h}`);
+            if (ind) {
+                ind.textContent = h === currentSortColumn ? (currentSortDirection === 'asc' ? ' ▲' : ' ▼') : '';
+            }
+        });
+
+        filterAndRender();
+    }
+
+    // Filter, Sort, and Render Table Rows
+    function filterAndRender() {
+        const searchTerm = searchInput.value.toLowerCase().trim();
+        const selectedCountry = countryFilter.value;
+        const selectedObjectType = objectTypeFilter.value;
+
+        let filtered = csvRows.filter(row => {
+            if (selectedCountry && row['country_raw'] !== selectedCountry) {
+                return false;
+            }
+            if (selectedObjectType && row['object_type_raw'] !== selectedObjectType) {
+                return false;
+            }
+            if (searchTerm) {
+                const matches = Object.values(row).some(val => 
+                    String(val).toLowerCase().includes(searchTerm)
+                );
+                if (!matches) return false;
+            }
+            return true;
+        });
+
+        if (currentSortColumn) {
+            filtered.sort((a, b) => {
+                let valA = a[currentSortColumn] || '';
+                let valB = b[currentSortColumn] || '';
+
+                let numA = parseFloat(valA);
+                let numB = parseFloat(valB);
+                if (!isNaN(numA) && !isNaN(numB)) {
+                    return currentSortDirection === 'asc' ? numA - numB : numB - numA;
+                }
+
+                let comp = String(valA).localeCompare(String(valB), undefined, { numeric: true, sensitivity: 'base' });
+                return currentSortDirection === 'asc' ? comp : -comp;
+            });
+        }
+
+        tableBody.innerHTML = '';
+        if (filtered.length === 0) {
+            const tr = document.createElement('tr');
+            const td = document.createElement('td');
+            td.setAttribute('colspan', csvHeaders.length);
+            td.className = 'no-results';
+            td.textContent = 'No matching records found.';
+            tr.appendChild(td);
+            tableBody.appendChild(tr);
+        } else {
+            filtered.forEach(row => {
+                const tr = document.createElement('tr');
+                csvHeaders.forEach(header => {
+                    const td = document.createElement('td');
+                    td.textContent = row[header] !== undefined ? row[header] : '';
+                    tr.appendChild(td);
+                });
+                tableBody.appendChild(tr);
+            });
+        }
+
+        recordCounter.textContent = `Showing ${filtered.length} of ${csvRows.length} records`;
+    }
+
+    searchInput.addEventListener('input', filterAndRender);
+    countryFilter.addEventListener('change', filterAndRender);
+    objectTypeFilter.addEventListener('change', filterAndRender);
+
+    function showError(message) {
+        errorBanner.textContent = message;
+        errorBanner.style.display = 'block';
+        controlsSection.style.display = 'none';
+        tableContainer.style.display = 'none';
+    }
+
+    function hideError() {
+        errorBanner.style.display = 'none';
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Sample Decade Inspector</title>
+    <style>
+        :root {
+            --primary: #2b6cb0;
+            --primary-hover: #2c5282;
+            --bg: #f7fafc;
+            --card-bg: #ffffff;
+            --text: #2d3748;
+            --border: #e2e8f0;
+            --error-bg: #fff5f5;
+            --error-text: #c53030;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            margin: 0;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 1.5rem;
+            margin-top: 0;
+            color: var(--primary);
+        }
+
+        p.subtitle {
+            font-size: 0.95rem;
+            color: #4a5568;
+            margin-bottom: 1.5rem;
+        }
+
+        .upload-section {
+            border: 2px dashed var(--border);
+            padding: 1.5rem;
+            text-align: center;
+            border-radius: 6px;
+            margin-bottom: 1.5rem;
+            background: #fafafa;
+        }
+
+        input[type="file"] {
+            display: none;
+        }
+
+        .file-upload-btn {
+            background-color: var(--primary);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            display: inline-block;
+            font-weight: 500;
+            transition: background-color 0.2s;
+        }
+
+        .file-upload-btn:hover {
+            background-color: var(--primary-hover);
+        }
+
+        #file-name {
+            margin-top: 0.5rem;
+            font-size: 0.85rem;
+            color: #718096;
+        }
+
+        .error-message {
+            background-color: var(--error-bg);
+            color: var(--error-text);
+            padding: 1rem;
+            border-radius: 4px;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--error-text);
+            display: none;
+        }
+
+        .results-section {
+            display: none;
+        }
+
+        .section-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 0.25rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+        }
+
+        th, td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+
+        th {
+            background-color: #edf2f7;
+            font-weight: 600;
+        }
+
+        .chart-container {
+            width: 100%;
+            overflow-x: auto;
+            background: white;
+            padding: 1rem 0;
+        }
+
+        svg {
+            width: 100%;
+            height: 350px;
+        }
+
+        .bar {
+            fill: var(--primary);
+            transition: fill 0.2s;
+        }
+
+        .bar:hover {
+            fill: var(--primary-hover);
+        }
+
+        .axis {
+            stroke: #a0aec0;
+            stroke-width: 1;
+        }
+
+        .axis-label {
+            font-size: 11px;
+            fill: #4a5568;
+            text-anchor: middle;
+        }
+
+        .value-label {
+            font-size: 10px;
+            fill: #2d3748;
+            text-anchor: middle;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Book Sample Decade Inspector</h1>
+    <p class="subtitle">Analyze local CSV data securely in your browser without uploading files to any server.</p>
+
+    <div class="upload-section">
+        <label for="csv-file-input" class="file-upload-btn">Choose "book-sample.csv"</label>
+        <input type="file" id="csv-file-input" accept=".csv">
+        <div id="file-name">No file selected</div>
+    </div>
+
+    <div id="error-banner" class="error-message"></div>
+
+    <div id="results" class="results-section">
+        <div class="section-title">Aggregated Table</div>
+        <table id="data-table">
+            <thead>
+                <tr>
+                    <th>Decade</th>
+                    <th>Recorded Editions Count</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+
+        <div class="section-title">Recorded Editions in the Teaching Sample by Decade</div>
+        <div class="chart-container">
+            <svg id="bar-chart" viewBox="0 0 700 350" preserveAspectRatio="xMidYMid meet"></svg>
+        </div>
+    </div>
+</div>
+
+<script>
+    const fileInput = document.getElementById('csv-file-input');
+    const fileNameDisplay = document.getElementById('file-name');
+    const errorBanner = document.getElementById('error-banner');
+    const resultsSection = document.getElementById('results');
+    const tableBody = document.querySelector('#data-table tbody');
+    const svgChart = document.getElementById('bar-chart');
+
+    fileInput.addEventListener('change', function(event) {
+        const file = event.target.files[0];
+        if (!file) return;
+
+        fileNameDisplay.textContent = file.name;
+        hideError();
+
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            try {
+                const text = e.target.result;
+                processCSV(text);
+            } catch (err) {
+                showError("Error processing file: " + err.message);
+            }
+        };
+        reader.onerror = function() {
+            showError("Failed to read the selected file.");
+        };
+        reader.readAsText(file);
+    });
+
+    function parseCSV(text) {
+        const lines = text.split(/\r\n|\n/);
+        if (lines.length === 0 || text.trim() === "") {
+            throw new Error("The CSV file is empty.");
+        }
+
+        const headers = parseCSVLine(lines[0]);
+        const data = [];
+
+        for (let i = 1; i < lines.length; i++) {
+            if (!lines[i].trim()) continue;
+            const currentLine = parseCSVLine(lines[i]);
+            
+            if (currentLine.length === headers.length) {
+                const rowObj = {};
+                for (let j = 0; j < headers.length; j++) {
+                    rowObj[headers[j].trim()] = currentLine[j].trim();
+                }
+                data.push(rowObj);
+            }
+        }
+        return { headers, data };
+    }
+
+    function parseCSVLine(line) {
+        const result = [];
+        let startValue = 0;
+        let inQuotes = false;
+
+        for (let i = 0; i < line.length; i++) {
+            if (line[i] === '"') {
+                inQuotes = !inQuotes;
+            } else if (line[i] === ',' && !inQuotes) {
+                result.push(line.substring(startValue, i).replace(/^"|"$/g, '').trim());
+                startValue = i + 1;
+            }
+        }
+        result.push(line.substring(startValue).replace(/^"|"$/g, '').trim());
+        return result;
+    }
+
+    function processCSV(text) {
+        const { headers, data } = parseCSV(text);
+
+        if (!headers.includes('decade')) {
+            throw new Error("Absent 'decade' column. The uploaded CSV must contain a column named 'decade'.");
+        }
+
+        if (data.length === 0) {
+            throw new Error("The CSV file contains headers but no data rows.");
+        }
+
+        const counts = {};
+        data.forEach(row => {
+            let decade = row['decade'];
+            if (!decade || decade === "") {
+                decade = "Missing";
+            }
+            counts[decade] = (counts[decade] || 0) + 1;
+        });
+
+        const sortedDecades = Object.keys(counts).sort((a, b) => {
+            if (a === "Missing") return 1;
+            if (b === "Missing") return -1;
+            return parseInt(a, 10) - parseInt(b, 10);
+        });
+
+        const aggregatedData = sortedDecades.map(decade => ({
+            decade: decade,
+            count: counts[decade]
+        }));
+
+        renderTable(aggregatedData);
+        renderChart(aggregatedData);
+        resultsSection.style.display = 'block';
+    }
+
+    function renderTable(data) {
+        tableBody.innerHTML = '';
+        data.forEach(item => {
+            const tr = document.createElement('tr');
+            tr.innerHTML = `<td>${escapeHtml(item.decade)}</td><td>${item.count}</td>`;
+            tableBody.appendChild(tr);
+        });
+    }
+
+    function renderChart(data) {
+        svgChart.innerHTML = '';
+
+        const width = 700;
+        const height = 350;
+        const margin = { top: 30, right: 20, bottom: 50, left: 50 };
+        const chartWidth = width - margin.left - margin.right;
+        const chartHeight = height - margin.top - margin.bottom;
+
+        const maxCount = Math.max(...data.map(d => d.count), 5);
+        const barWidth = chartWidth / data.length - 10;
+
+        const g = document.createElementNS("http://www.w3.org/2000/svg", "g");
+        g.setAttribute("transform", `translate(${margin.left}, ${margin.top})`);
+        svgChart.appendChild(g);
+
+        const yAxis = document.createElementNS("http://www.w3.org/2000/svg", "line");
+        yAxis.setAttribute("x1", 0);
+        yAxis.setAttribute("y1", 0);
+        yAxis.setAttribute("x2", 0);
+        yAxis.setAttribute("y2", chartHeight);
+        yAxis.setAttribute("class", "axis");
+        g.appendChild(yAxis);
+
+        const xAxis = document.createElementNS("http://www.w3.org/2000/svg", "line");
+        xAxis.setAttribute("x1", 0);
+        xAxis.setAttribute("y1", chartHeight);
+        xAxis.setAttribute("x2", chartWidth);
+        xAxis.setAttribute("y2", chartHeight);
+        xAxis.setAttribute("class", "axis");
+        g.appendChild(xAxis);
+
+        data.forEach((item, index) => {
+            const barHeight = (item.count / maxCount) * chartHeight;
+            const x = index * (chartWidth / data.length) + 5;
+            const y = chartHeight - barHeight;
+
+            const rect = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+            rect.setAttribute("x", x);
+            rect.setAttribute("y", y);
+            rect.setAttribute("width", Math.max(barWidth, 2));
+            rect.setAttribute("height", barHeight);
+            rect.setAttribute("class", "bar");
+            
+            const title = document.createElementNS("http://www.w3.org/2000/svg", "title");
+            title.textContent = `Decade: ${item.decade}, Count: ${item.count}`;
+            rect.appendChild(title);
+            g.appendChild(rect);
+
+            const valText = document.createElementNS("http://www.w3.org/2000/svg", "text");
+            valText.setAttribute("x", x + barWidth / 2);
+            valText.setAttribute("y", y - 5);
+            valText.setAttribute("class", "value-label");
+            valText.textContent = item.count;
+            g.appendChild(valText);
+
+            const label = document.createElementNS("http://www.w3.org/2000/svg", "text");
+            label.setAttribute("x", x + barWidth / 2);
+            label.setAttribute("y", chartHeight + 20);
+            label.setAttribute("class", "axis-label");
+            label.setAttribute("transform", `rotate(30, ${x + barWidth / 2}, ${chartHeight + 20})`);
+            label.textContent = item.decade;
+            g.appendChild(label);
+        });
+    }
+
+    function showError(message) {
+        errorBanner.textContent = message;
+        errorBanner.style.display = 'block';
+        resultsSection.style.display = 'none';
+    }
+
+    function hideError() {
+        errorBanner.style.display = 'none';
+    }
+
+    function escapeHtml(str) {
+        return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+    }
+</script>
+
+</body>
+</html>
