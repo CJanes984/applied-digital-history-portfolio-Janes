@@ -131,3 +131,5 @@ Make missing values visible.
 Print validation checks, including row counts and relevant missing-value counts.
 Save the result as book-analysis-summary.csv, if applicable.
 Give me one self-contained code cell, followed by a plain-language explanation of every major step and any assumptions.
+
+After seeing others work and HTML files. I see Google Gemini as a non-ideal option when creating any code set ups. It output working code, but neither of the HTML files that were output were unique. They were practically the same set up allowing me to look at the table simply, but it didn't create any tables. I am going to try to make another HTML file with a different LLM and see what the output results are.
