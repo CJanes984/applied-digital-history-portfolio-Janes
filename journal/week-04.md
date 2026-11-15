@@ -1,3 +1,17 @@
+What material did I work with? I worked with ChatGPT, Gemini, Python Code, and Google Colab. ChatGPT and Gemini are both LLM models which were utilized solely for scripting and debugging code in the tutorial. The scripts were written using Python, and Google Colab is a web-browser program that allows a user to write code and run code in the notebook.
+
+What transformation did the tool perform? The tools used allowed the user to inspect data automatically. The scripts written by the LLM showed the user the counts of data in the project, the amount of data that was unique, and much more. The LLM was also utilized to make an HTML file that could be opened on a computer to inspect data in a more structured and clean way.
+
+What decisisions did I make? I prompted the LLM to create code that I needed to succeed at the project.
+
+What failed, remained unclear, or produced an unexpected result? At one point after a short break, I struggled to get the files to reupload properly, and had to restart a new notebook to easily fix it. I wasn't far into the project at that point, so restarting was easier than spending the time and energy to find out why the files wouldn't upload correctly. 
+
+What does the output allow me to infer historically? I am able to prompt the LLM to create any visualization I need, and it can do so within seconds rather than me having to spend hours or days figuring out how to write the proper code. Also, I am able to infer why the data appears in a certain structure rather than exactly what the data means.
+
+What does the output allow me to infer? I am able to easily visualize the data and create tables or graphs that help me to understand the connections between the data.
+
+Could this method contribute to my final project? Why or why not? Absolutely. This method can help me to organize my data and make it presentable to the class. It won't necessarily help me to understand my data as well as some other methods could, but it will help me to make a clean and understandable layout for the final project.
+
 **1.	Report one result you independently validated and explain how you validated it.**
 I validated that the code was not trying to overwrite or edit the original data when being uploaded to the HTML address on a search engine. 
 After glancing over the code and having the LLM give me a rundown on what specific parts of the code do, I was able to be sure it was safe for use.
