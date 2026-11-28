@@ -1,0 +1,42 @@
+Id,Label,gender,role,city,confession,latitude,longitude
+P001,Anna Keller,woman,printer and publisher,Augsburg,Catholic,48.3668,10.8985
+P002,Matthias Vogler,man,humanist scholar,Augsburg,reform-minded,48.3668,10.8985
+P003,Elisabeth Reuchlin,woman,merchant,Nuremberg,Catholic,49.4521,11.0767
+P004,Johannes Hartmann,man,city secretary,Nuremberg,Lutheran,49.4521,11.0767
+P005,Katharina Brenner,woman,printer and publisher,Nuremberg,Lutheran,49.4521,11.0767
+P006,Georg Auer,man,pastor,Wittenberg,Lutheran,51.866,12.644
+P007,Margarethe Seidel,woman,school administrator,Wittenberg,Lutheran,51.866,12.644
+P008,Nikolaus Eber,man,university lecturer,Wittenberg,Lutheran,51.866,12.644
+P009,Barbara Lenz,woman,bookseller,Leipzig,reform-minded,51.3397,12.3731
+P010,Konrad Faber,man,printer and publisher,Leipzig,Catholic,51.3397,12.3731
+P011,Agnes Richter,woman,merchant,Leipzig,Catholic,51.3397,12.3731
+P012,Sebastian Walther,man,jurist,Erfurt,reform-minded,50.9848,11.0299
+P013,Ursula Kramer,woman,schoolteacher,Erfurt,Lutheran,50.9848,11.0299
+P014,Peter Schenk,man,city councillor,Erfurt,Catholic,50.9848,11.0299
+P015,Clara Mair,woman,noble patron,Innsbruck,Catholic,47.2692,11.4041
+P016,Leonhard Rott,man,court official,Innsbruck,Catholic,47.2692,11.4041
+P017,Magdalena Frisch,woman,merchant,Basel,Reformed,47.5596,7.5886
+P018,Caspar Hummel,man,printer and publisher,Basel,Reformed,47.5596,7.5886
+P019,Dorothea Blum,woman,humanist scholar,Basel,reform-minded,47.5596,7.5886
+P020,Martin Gessner,man,university lecturer,Basel,Reformed,47.5596,7.5886
+P021,Eva Ziegler,woman,bookseller,Strasbourg,Reformed,48.5734,7.7521
+P022,Wolfgang Sturm,man,pastor,Strasbourg,Reformed,48.5734,7.7521
+P023,Helena Binder,woman,printer and publisher,Strasbourg,Reformed,48.5734,7.7521
+P024,Jakob Metz,man,city secretary,Strasbourg,Catholic,48.5734,7.7521
+P025,Sofie Adler,woman,noble patron,Mainz,Catholic,49.9929,8.2473
+P026,Thomas Renner,man,canon,Mainz,Catholic,49.9929,8.2473
+P027,Maria Eck,woman,merchant,Mainz,Catholic,49.9929,8.2473
+P028,Paul Winter,man,jurist,Cologne,Catholic,50.9375,6.9603
+P029,Judith Braun,woman,school administrator,Cologne,Catholic,50.9375,6.9603
+P030,Andreas Kranz,man,printer and publisher,Cologne,Catholic,50.9375,6.9603
+P031,Sabina Lorenz,woman,bookseller,Frankfurt,reform-minded,50.1109,8.6821
+P032,Michael Dorn,man,merchant,Frankfurt,Catholic,50.1109,8.6821
+P033,Regina Weiss,woman,humanist scholar,Frankfurt,reform-minded,50.1109,8.6821
+P034,Philipp Sauer,man,city councillor,Frankfurt,Lutheran,50.1109,8.6821
+P035,Cecilia Kern,woman,noble patron,Prague,Utraquist,50.0755,14.4378
+P036,Hans Tucher,man,court official,Prague,Catholic,50.0755,14.4378
+P037,Lucia Brandt,woman,printer and publisher,Vienna,Catholic,48.2082,16.3738
+P038,Friedrich Ort,man,university lecturer,Vienna,Catholic,48.2082,16.3738
+P039,Theresa Lang,woman,merchant,Vienna,Catholic,48.2082,16.3738
+P040,Simon Ried,man,pastor,Salzburg,Catholic,47.8095,13.055
+U001,Unidentified correspondent A,unknown,unknown,unknown,unknown,,

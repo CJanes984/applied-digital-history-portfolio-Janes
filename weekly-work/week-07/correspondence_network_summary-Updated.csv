@@ -1,0 +1,2 @@
+model,num_nodes,num_edges,density,avg_degree,num_components,is_connected,avg_shortest_path_length,diameter,excluded_nodes,num_directed_edges,total_weight,directed_density,avg_in_degree,avg_out_degree,reciprocity,num_weakly_connected_components,num_strongly_connected_components
+unweighted undirected projection,41,55,0.0670731707317073,2.682926829268293,1,True,3.887804878048781,9,0,82,304,0.05,2.0,2.0,0.6585365853658537,1,1

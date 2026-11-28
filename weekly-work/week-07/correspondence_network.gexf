@@ -1,0 +1,1215 @@
+<?xml version='1.0' encoding='utf-8'?>
+<gexf xmlns="http://www.gexf.net/1.2draft" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.gexf.net/1.2draft http://www.gexf.net/1.2draft/gexf.xsd" version="1.2">
+  <meta lastmodifieddate="2026-11-28">
+    <creator>NetworkX 3.7</creator>
+  </meta>
+  <graph defaultedgetype="directed" mode="static" name="">
+    <attributes mode="static" class="edge">
+      <attribute id="7" title="Type" type="string" />
+      <attribute id="8" title="first_date" type="string" />
+      <attribute id="9" title="last_date" type="string" />
+      <attribute id="10" title="surviving_text_count" type="long" />
+      <attribute id="11" title="catalogue_reference_only_count" type="long" />
+    </attributes>
+    <attributes mode="static" class="node">
+      <attribute id="0" title="Label" type="string" />
+      <attribute id="1" title="gender" type="string" />
+      <attribute id="2" title="role" type="string" />
+      <attribute id="3" title="city" type="string" />
+      <attribute id="4" title="confession" type="string" />
+      <attribute id="5" title="latitude" type="double" />
+      <attribute id="6" title="longitude" type="double" />
+    </attributes>
+    <nodes>
+      <node id="P001" label="P001">
+        <attvalues>
+          <attvalue for="0" value="Anna Keller" />
+          <attvalue for="1" value="woman" />
+          <attvalue for="2" value="printer and publisher" />
+          <attvalue for="3" value="Augsburg" />
+          <attvalue for="4" value="Catholic" />
+          <attvalue for="5" value="48.3668" />
+          <attvalue for="6" value="10.8985" />
+        </attvalues>
+      </node>
+      <node id="P002" label="P002">
+        <attvalues>
+          <attvalue for="0" value="Matthias Vogler" />
+          <attvalue for="1" value="man" />
+          <attvalue for="2" value="humanist scholar" />
+          <attvalue for="3" value="Augsburg" />
+          <attvalue for="4" value="reform-minded" />
+          <attvalue for="5" value="48.3668" />
+          <attvalue for="6" value="10.8985" />
+        </attvalues>
+      </node>
+      <node id="P003" label="P003">
+        <attvalues>
+          <attvalue for="0" value="Elisabeth Reuchlin" />
+          <attvalue for="1" value="woman" />
+          <attvalue for="2" value="merchant" />
+          <attvalue for="3" value="Nuremberg" />
+          <attvalue for="4" value="Catholic" />
+          <attvalue for="5" value="49.4521" />
+          <attvalue for="6" value="11.0767" />
+        </attvalues>
+      </node>
+      <node id="P004" label="P004">
+        <attvalues>
+          <attvalue for="0" value="Johannes Hartmann" />
+          <attvalue for="1" value="man" />
+          <attvalue for="2" value="city secretary" />
+          <attvalue for="3" value="Nuremberg" />
+          <attvalue for="4" value="Lutheran" />
+          <attvalue for="5" value="49.4521" />
+          <attvalue for="6" value="11.0767" />
+        </attvalues>
+      </node>
+      <node id="P005" label="P005">
+        <attvalues>
+          <attvalue for="0" value="Katharina Brenner" />
+          <attvalue for="1" value="woman" />
+          <attvalue for="2" value="printer and publisher" />
+          <attvalue for="3" value="Nuremberg" />
+          <attvalue for="4" value="Lutheran" />
+          <attvalue for="5" value="49.4521" />
+          <attvalue for="6" value="11.0767" />
+        </attvalues>
+      </node>
+      <node id="P006" label="P006">
+        <attvalues>
+          <attvalue for="0" value="Georg Auer" />
+          <attvalue for="1" value="man" />
+          <attvalue for="2" value="pastor" />
+          <attvalue for="3" value="Wittenberg" />
+          <attvalue for="4" value="Lutheran" />
+          <attvalue for="5" value="51.866" />
+          <attvalue for="6" value="12.644" />
+        </attvalues>
+      </node>
+      <node id="P007" label="P007">
+        <attvalues>
+          <attvalue for="0" value="Margarethe Seidel" />
+          <attvalue for="1" value="woman" />
+          <attvalue for="2" value="school administrator" />
+          <attvalue for="3" value="Wittenberg" />
+          <attvalue for="4" value="Lutheran" />
+          <attvalue for="5" value="51.866" />
+          <attvalue for="6" value="12.644" />
+        </attvalues>
+      </node>
+      <node id="P008" label="P008">
+        <attvalues>
+          <attvalue for="0" value="Nikolaus Eber" />
+          <attvalue for="1" value="man" />
+          <attvalue for="2" value="university lecturer" />
+          <attvalue for="3" value="Wittenberg" />
+          <attvalue for="4" value="Lutheran" />
+          <attvalue for="5" value="51.866" />
+          <attvalue for="6" value="12.644" />
+        </attvalues>
+      </node>
+      <node id="P009" label="P009">
+        <attvalues>
+          <attvalue for="0" value="Barbara Lenz" />
+          <attvalue for="1" value="woman" />
+          <attvalue for="2" value="bookseller" />
+          <attvalue for="3" value="Leipzig" />
+          <attvalue for="4" value="reform-minded" />
+          <attvalue for="5" value="51.3397" />
+          <attvalue for="6" value="12.3731" />
+        </attvalues>
+      </node>
+      <node id="P010" label="P010">
+        <attvalues>
+          <attvalue for="0" value="Konrad Faber" />
+          <attvalue for="1" value="man" />
+          <attvalue for="2" value="printer and publisher" />
+          <attvalue for="3" value="Leipzig" />
+          <attvalue for="4" value="Catholic" />
+          <attvalue for="5" value="51.3397" />
+          <attvalue for="6" value="12.3731" />
+        </attvalues>
+      </node>
+      <node id="P011" label="P011">
+        <attvalues>
+          <attvalue for="0" value="Agnes Richter" />
+          <attvalue for="1" value="woman" />
+          <attvalue for="2" value="merchant" />
+          <attvalue for="3" value="Leipzig" />
+          <attvalue for="4" value="Catholic" />
+          <attvalue for="5" value="51.3397" />
+          <attvalue for="6" value="12.3731" />
+        </attvalues>
+      </node>
+      <node id="P012" label="P012">
+        <attvalues>
+          <attvalue for="0" value="Sebastian Walther" />
+          <attvalue for="1" value="man" />
+          <attvalue for="2" value="jurist" />
+          <attvalue for="3" value="Erfurt" />
+          <attvalue for="4" value="reform-minded" />
+          <attvalue for="5" value="50.9848" />
+          <attvalue for="6" value="11.0299" />
+        </attvalues>
+      </node>
+      <node id="P013" label="P013">
+        <attvalues>
+          <attvalue for="0" value="Ursula Kramer" />
+          <attvalue for="1" value="woman" />
+          <attvalue for="2" value="schoolteacher" />
+          <attvalue for="3" value="Erfurt" />
+          <attvalue for="4" value="Lutheran" />
+          <attvalue for="5" value="50.9848" />
+          <attvalue for="6" value="11.0299" />
+        </attvalues>
+      </node>
+      <node id="P014" label="P014">
+        <attvalues>
+          <attvalue for="0" value="Peter Schenk" />
+          <attvalue for="1" value="man" />
+          <attvalue for="2" value="city councillor" />
+          <attvalue for="3" value="Erfurt" />
+          <attvalue for="4" value="Catholic" />
+          <attvalue for="5" value="50.9848" />
+          <attvalue for="6" value="11.0299" />
+        </attvalues>
+      </node>
+      <node id="P015" label="P015">
+        <attvalues>
+          <attvalue for="0" value="Clara Mair" />
+          <attvalue for="1" value="woman" />
+          <attvalue for="2" value="noble patron" />
+          <attvalue for="3" value="Innsbruck" />
+          <attvalue for="4" value="Catholic" />
+          <attvalue for="5" value="47.2692" />
+          <attvalue for="6" value="11.4041" />
+        </attvalues>
+      </node>
+      <node id="P016" label="P016">
+        <attvalues>
+          <attvalue for="0" value="Leonhard Rott" />
+          <attvalue for="1" value="man" />
+          <attvalue for="2" value="court official" />
+          <attvalue for="3" value="Innsbruck" />
+          <attvalue for="4" value="Catholic" />
+          <attvalue for="5" value="47.2692" />
+          <attvalue for="6" value="11.4041" />
+        </attvalues>
+      </node>
+      <node id="P017" label="P017">
+        <attvalues>
+          <attvalue for="0" value="Magdalena Frisch" />
+          <attvalue for="1" value="woman" />
+          <attvalue for="2" value="merchant" />
+          <attvalue for="3" value="Basel" />
+          <attvalue for="4" value="Reformed" />
+          <attvalue for="5" value="47.5596" />
+          <attvalue for="6" value="7.5886" />
+        </attvalues>
+      </node>
+      <node id="P018" label="P018">
+        <attvalues>
+          <attvalue for="0" value="Caspar Hummel" />
+          <attvalue for="1" value="man" />
+          <attvalue for="2" value="printer and publisher" />
+          <attvalue for="3" value="Basel" />
+          <attvalue for="4" value="Reformed" />
+          <attvalue for="5" value="47.5596" />
+          <attvalue for="6" value="7.5886" />
+        </attvalues>
+      </node>
+      <node id="P019" label="P019">
+        <attvalues>
+          <attvalue for="0" value="Dorothea Blum" />
+          <attvalue for="1" value="woman" />
+          <attvalue for="2" value="humanist scholar" />
+          <attvalue for="3" value="Basel" />
+          <attvalue for="4" value="reform-minded" />
+          <attvalue for="5" value="47.5596" />
+          <attvalue for="6" value="7.5886" />
+        </attvalues>
+      </node>
+      <node id="P020" label="P020">
+        <attvalues>
+          <attvalue for="0" value="Martin Gessner" />
+          <attvalue for="1" value="man" />
+          <attvalue for="2" value="university lecturer" />
+          <attvalue for="3" value="Basel" />
+          <attvalue for="4" value="Reformed" />
+          <attvalue for="5" value="47.5596" />
+          <attvalue for="6" value="7.5886" />
+        </attvalues>
+      </node>
+      <node id="P021" label="P021">
+        <attvalues>
+          <attvalue for="0" value="Eva Ziegler" />
+          <attvalue for="1" value="woman" />
+          <attvalue for="2" value="bookseller" />
+          <attvalue for="3" value="Strasbourg" />
+          <attvalue for="4" value="Reformed" />
+          <attvalue for="5" value="48.5734" />
+          <attvalue for="6" value="7.7521" />
+        </attvalues>
+      </node>
+      <node id="P022" label="P022">
+        <attvalues>
+          <attvalue for="0" value="Wolfgang Sturm" />
+          <attvalue for="1" value="man" />
+          <attvalue for="2" value="pastor" />
+          <attvalue for="3" value="Strasbourg" />
+          <attvalue for="4" value="Reformed" />
+          <attvalue for="5" value="48.5734" />
+          <attvalue for="6" value="7.7521" />
+        </attvalues>
+      </node>
+      <node id="P023" label="P023">
+        <attvalues>
+          <attvalue for="0" value="Helena Binder" />
+          <attvalue for="1" value="woman" />
+          <attvalue for="2" value="printer and publisher" />
+          <attvalue for="3" value="Strasbourg" />
+          <attvalue for="4" value="Reformed" />
+          <attvalue for="5" value="48.5734" />
+          <attvalue for="6" value="7.7521" />
+        </attvalues>
+      </node>
+      <node id="P024" label="P024">
+        <attvalues>
+          <attvalue for="0" value="Jakob Metz" />
+          <attvalue for="1" value="man" />
+          <attvalue for="2" value="city secretary" />
+          <attvalue for="3" value="Strasbourg" />
+          <attvalue for="4" value="Catholic" />
+          <attvalue for="5" value="48.5734" />
+          <attvalue for="6" value="7.7521" />
+        </attvalues>
+      </node>
+      <node id="P025" label="P025">
+        <attvalues>
+          <attvalue for="0" value="Sofie Adler" />
+          <attvalue for="1" value="woman" />
+          <attvalue for="2" value="noble patron" />
+          <attvalue for="3" value="Mainz" />
+          <attvalue for="4" value="Catholic" />
+          <attvalue for="5" value="49.9929" />
+          <attvalue for="6" value="8.2473" />
+        </attvalues>
+      </node>
+      <node id="P026" label="P026">
+        <attvalues>
+          <attvalue for="0" value="Thomas Renner" />
+          <attvalue for="1" value="man" />
+          <attvalue for="2" value="canon" />
+          <attvalue for="3" value="Mainz" />
+          <attvalue for="4" value="Catholic" />
+          <attvalue for="5" value="49.9929" />
+          <attvalue for="6" value="8.2473" />
+        </attvalues>
+      </node>
+      <node id="P027" label="P027">
+        <attvalues>
+          <attvalue for="0" value="Maria Eck" />
+          <attvalue for="1" value="woman" />
+          <attvalue for="2" value="merchant" />
+          <attvalue for="3" value="Mainz" />
+          <attvalue for="4" value="Catholic" />
+          <attvalue for="5" value="49.9929" />
+          <attvalue for="6" value="8.2473" />
+        </attvalues>
+      </node>
+      <node id="P028" label="P028">
+        <attvalues>
+          <attvalue for="0" value="Paul Winter" />
+          <attvalue for="1" value="man" />
+          <attvalue for="2" value="jurist" />
+          <attvalue for="3" value="Cologne" />
+          <attvalue for="4" value="Catholic" />
+          <attvalue for="5" value="50.9375" />
+          <attvalue for="6" value="6.9603" />
+        </attvalues>
+      </node>
+      <node id="P029" label="P029">
+        <attvalues>
+          <attvalue for="0" value="Judith Braun" />
+          <attvalue for="1" value="woman" />
+          <attvalue for="2" value="school administrator" />
+          <attvalue for="3" value="Cologne" />
+          <attvalue for="4" value="Catholic" />
+          <attvalue for="5" value="50.9375" />
+          <attvalue for="6" value="6.9603" />
+        </attvalues>
+      </node>
+      <node id="P030" label="P030">
+        <attvalues>
+          <attvalue for="0" value="Andreas Kranz" />
+          <attvalue for="1" value="man" />
+          <attvalue for="2" value="printer and publisher" />
+          <attvalue for="3" value="Cologne" />
+          <attvalue for="4" value="Catholic" />
+          <attvalue for="5" value="50.9375" />
+          <attvalue for="6" value="6.9603" />
+        </attvalues>
+      </node>
+      <node id="P031" label="P031">
+        <attvalues>
+          <attvalue for="0" value="Sabina Lorenz" />
+          <attvalue for="1" value="woman" />
+          <attvalue for="2" value="bookseller" />
+          <attvalue for="3" value="Frankfurt" />
+          <attvalue for="4" value="reform-minded" />
+          <attvalue for="5" value="50.1109" />
+          <attvalue for="6" value="8.6821" />
+        </attvalues>
+      </node>
+      <node id="P032" label="P032">
+        <attvalues>
+          <attvalue for="0" value="Michael Dorn" />
+          <attvalue for="1" value="man" />
+          <attvalue for="2" value="merchant" />
+          <attvalue for="3" value="Frankfurt" />
+          <attvalue for="4" value="Catholic" />
+          <attvalue for="5" value="50.1109" />
+          <attvalue for="6" value="8.6821" />
+        </attvalues>
+      </node>
+      <node id="P033" label="P033">
+        <attvalues>
+          <attvalue for="0" value="Regina Weiss" />
+          <attvalue for="1" value="woman" />
+          <attvalue for="2" value="humanist scholar" />
+          <attvalue for="3" value="Frankfurt" />
+          <attvalue for="4" value="reform-minded" />
+          <attvalue for="5" value="50.1109" />
+          <attvalue for="6" value="8.6821" />
+        </attvalues>
+      </node>
+      <node id="P034" label="P034">
+        <attvalues>
+          <attvalue for="0" value="Philipp Sauer" />
+          <attvalue for="1" value="man" />
+          <attvalue for="2" value="city councillor" />
+          <attvalue for="3" value="Frankfurt" />
+          <attvalue for="4" value="Lutheran" />
+          <attvalue for="5" value="50.1109" />
+          <attvalue for="6" value="8.6821" />
+        </attvalues>
+      </node>
+      <node id="P035" label="P035">
+        <attvalues>
+          <attvalue for="0" value="Cecilia Kern" />
+          <attvalue for="1" value="woman" />
+          <attvalue for="2" value="noble patron" />
+          <attvalue for="3" value="Prague" />
+          <attvalue for="4" value="Utraquist" />
+          <attvalue for="5" value="50.0755" />
+          <attvalue for="6" value="14.4378" />
+        </attvalues>
+      </node>
+      <node id="P036" label="P036">
+        <attvalues>
+          <attvalue for="0" value="Hans Tucher" />
+          <attvalue for="1" value="man" />
+          <attvalue for="2" value="court official" />
+          <attvalue for="3" value="Prague" />
+          <attvalue for="4" value="Catholic" />
+          <attvalue for="5" value="50.0755" />
+          <attvalue for="6" value="14.4378" />
+        </attvalues>
+      </node>
+      <node id="P037" label="P037">
+        <attvalues>
+          <attvalue for="0" value="Lucia Brandt" />
+          <attvalue for="1" value="woman" />
+          <attvalue for="2" value="printer and publisher" />
+          <attvalue for="3" value="Vienna" />
+          <attvalue for="4" value="Catholic" />
+          <attvalue for="5" value="48.2082" />
+          <attvalue for="6" value="16.3738" />
+        </attvalues>
+      </node>
+      <node id="P038" label="P038">
+        <attvalues>
+          <attvalue for="0" value="Friedrich Ort" />
+          <attvalue for="1" value="man" />
+          <attvalue for="2" value="university lecturer" />
+          <attvalue for="3" value="Vienna" />
+          <attvalue for="4" value="Catholic" />
+          <attvalue for="5" value="48.2082" />
+          <attvalue for="6" value="16.3738" />
+        </attvalues>
+      </node>
+      <node id="P039" label="P039">
+        <attvalues>
+          <attvalue for="0" value="Theresa Lang" />
+          <attvalue for="1" value="woman" />
+          <attvalue for="2" value="merchant" />
+          <attvalue for="3" value="Vienna" />
+          <attvalue for="4" value="Catholic" />
+          <attvalue for="5" value="48.2082" />
+          <attvalue for="6" value="16.3738" />
+        </attvalues>
+      </node>
+      <node id="P040" label="P040">
+        <attvalues>
+          <attvalue for="0" value="Simon Ried" />
+          <attvalue for="1" value="man" />
+          <attvalue for="2" value="pastor" />
+          <attvalue for="3" value="Salzburg" />
+          <attvalue for="4" value="Catholic" />
+          <attvalue for="5" value="47.8095" />
+          <attvalue for="6" value="13.055" />
+        </attvalues>
+      </node>
+      <node id="U001" label="U001">
+        <attvalues>
+          <attvalue for="0" value="Unidentified correspondent A" />
+          <attvalue for="1" value="unknown" />
+          <attvalue for="2" value="unknown" />
+          <attvalue for="3" value="unknown" />
+          <attvalue for="4" value="unknown" />
+        </attvalues>
+      </node>
+    </nodes>
+    <edges>
+      <edge source="P001" target="P002" id="0" weight="8">
+        <attvalues>
+          <attvalue for="7" value="Directed" />
+          <attvalue for="8" value="1518-01-01" />
+          <attvalue for="9" value="1533-06-09" />
+          <attvalue for="10" value="8" />
+          <attvalue for="11" value="0" />
+        </attvalues>
+      </edge>
+      <edge source="P001" target="P003" id="1" weight="5">
+        <attvalues>
+          <attvalue for="7" value="Directed" />
+          <attvalue for="8" value="1522-07-03" />
+          <attvalue for="9" value="1534-11" />
+          <attvalue for="10" value="5" />
+          <attvalue for="11" value="0" />
+        </attvalues>
+      </edge>
+      <edge source="P001" target="U001" id="2" weight="2">
+        <attvalues>
+          <attvalue for="7" value="Directed" />
+          <attvalue for="8" value="1530-07-25" />
+          <attvalue for="9" value="1533-08-05" />
+          <attvalue for="10" value="2" />
+          <attvalue for="11" value="0" />
+        </attvalues>
+      </edge>
+      <edge source="P002" target="P004" id="3" weight="6">
+        <attvalues>
+          <attvalue for="7" value="Directed" />
+          <attvalue for="8" value="1520-05-06" />
+          <attvalue for="9" value="1535-04-26" />
+          <attvalue for="10" value="5" />
+          <attvalue for="11" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="P002" target="P019" id="4" weight="5">
+        <attvalues>
+          <attvalue for="7" value="Directed" />
+          <attvalue for="8" value="1522-04-12" />
+          <attvalue for="9" value="1534-08-13" />
+          <attvalue for="10" value="5" />
+          <attvalue for="11" value="0" />
+        </attvalues>
+      </edge>
+      <edge source="P002" target="P001" id="5" weight="4">
+        <attvalues>
+          <attvalue for="7" value="Directed" />
+          <attvalue for="8" value="1520-04-02" />
+          <attvalue for="9" value="1529-07-23" />
+          <attvalue for="10" value="4" />
+          <attvalue for="11" value="0" />
+        </attvalues>
+      </edge>
+      <edge source="P003" target="P005" id="6" weight="4">
+        <attvalues>
+          <attvalue for="7" value="Directed" />
+          <attvalue for="8" value="1519-07-27" />
+          <attvalue for="9" value="1534-06-20" />
+          <attvalue for="10" value="4" />
+          <attvalue for="11" value="0" />
+        </attvalues>
+      </edge>
+      <edge source="P003" target="P001" id="7" weight="3">
+        <attvalues>
+          <attvalue for="7" value="Directed" />
+          <attvalue for="8" value="1524-10-04" />
+          <attvalue for="9" value="1530-12-18" />
+          <attvalue for="10" value="3" />
+          <attvalue for="11" value="0" />
+        </attvalues>
+      </edge>
+      <edge source="P004" target="P006" id="8" weight="8">
+        <attvalues>
+          <attvalue for="7" value="Directed" />
+          <attvalue for="8" value="1519-02-16" />
+          <attvalue for="9" value="1534-07-24" />
+          <attvalue for="10" value="7" />
+          <attvalue for="11" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="P004" target="P005" id="9" weight="7">
+        <attvalues>
+          <attvalue for="7" value="Directed" />
+          <attvalue for="8" value="1518-09-21" />
+          <attvalue for="9" value="1533-08-14" />
+          <attvalue for="10" value="7" />
+          <attvalue for="11" value="0" />
+        </attvalues>
+      </edge>
+      <edge source="P004" target="P024" id="10" weight="4">
+        <attvalues>
+          <attvalue for="7" value="Directed" />
+          <attvalue for="8" value="1526-10-14" />
+          <attvalue for="9" value="1535-01-08" />
+          <attvalue for="10" value="4" />
+          <attvalue for="11" value="0" />
+        </attvalues>
+      </edge>
+      <edge source="P005" target="P007" id="11" weight="5">
+        <attvalues>
+          <attvalue for="7" value="Directed" />
+          <attvalue for="8" value="1518-04-10" />
+          <attvalue for="9" value="1530-08-11" />
+          <attvalue for="10" value="5" />
+          <attvalue for="11" value="0" />
+        </attvalues>
+      </edge>
+      <edge source="P005" target="P004" id="12" weight="2">
+        <attvalues>
+          <attvalue for="7" value="Directed" />
+          <attvalue for="8" value="1532-10-08" />
+          <attvalue for="9" value="1535-11-15" />
+          <attvalue for="10" value="2" />
+          <attvalue for="11" value="0" />
+        </attvalues>
+      </edge>
+      <edge source="P006" target="P007" id="13" weight="7">
+        <attvalues>
+          <attvalue for="7" value="Directed" />
+          <attvalue for="8" value="1520-01-26" />
+          <attvalue for="9" value="1535-12-19" />
+          <attvalue for="10" value="7" />
+          <attvalue for="11" value="0" />
+        </attvalues>
+      </edge>
+      <edge source="P006" target="P008" id="14" weight="6">
+        <attvalues>
+          <attvalue for="7" value="Directed" />
+          <attvalue for="8" value="1518-05-14" />
+          <attvalue for="9" value="1533-04-07" />
+          <attvalue for="10" value="6" />
+          <attvalue for="11" value="0" />
+        </attvalues>
+      </edge>
+      <edge source="P007" target="P006" id="15" weight="3">
+        <attvalues>
+          <attvalue for="7" value="Directed" />
+          <attvalue for="8" value="1522-10-12" />
+          <attvalue for="9" value="1528-12-26" />
+          <attvalue for="10" value="3" />
+          <attvalue for="11" value="0" />
+        </attvalues>
+      </edge>
+      <edge source="P008" target="P009" id="16" weight="5">
+        <attvalues>
+          <attvalue for="7" value="Directed" />
+          <attvalue for="8" value="1519-10-09" />
+          <attvalue for="9" value="1534-09-02" />
+          <attvalue for="10" value="5" />
+          <attvalue for="11" value="0" />
+        </attvalues>
+      </edge>
+      <edge source="P008" target="P020" id="17" weight="4">
+        <attvalues>
+          <attvalue for="7" value="Directed" />
+          <attvalue for="8" value="1518-06-03" />
+          <attvalue for="9" value="1533-05-23" />
+          <attvalue for="10" value="3" />
+          <attvalue for="11" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="P008" target="P006" id="18" weight="3">
+        <attvalues>
+          <attvalue for="7" value="Directed" />
+          <attvalue for="8" value="1526-04-14" />
+          <attvalue for="9" value="1532-06-01" />
+          <attvalue for="10" value="2" />
+          <attvalue for="11" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="P009" target="P010" id="19" weight="5">
+        <attvalues>
+          <attvalue for="7" value="Directed" />
+          <attvalue for="8" value="1518-12-03" />
+          <attvalue for="9" value="1533-11-23" />
+          <attvalue for="10" value="5" />
+          <attvalue for="11" value="0" />
+        </attvalues>
+      </edge>
+      <edge source="P009" target="P011" id="20" weight="4">
+        <attvalues>
+          <attvalue for="7" value="Directed" />
+          <attvalue for="8" value="1519-05" />
+          <attvalue for="9" value="1534-04-18" />
+          <attvalue for="10" value="4" />
+          <attvalue for="11" value="0" />
+        </attvalues>
+      </edge>
+      <edge source="P010" target="P012" id="21" weight="4">
+        <attvalues>
+          <attvalue for="7" value="Directed" />
+          <attvalue for="8" value="1520-10-20" />
+          <attvalue for="9" value="1529-01-14" />
+          <attvalue for="10" value="3" />
+          <attvalue for="11" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="P010" target="P009" id="22" weight="2">
+        <attvalues>
+          <attvalue for="7" value="Directed" />
+          <attvalue for="8" value="1532-01-17" />
+          <attvalue for="9" value="1535-02-24" />
+          <attvalue for="10" value="2" />
+          <attvalue for="11" value="0" />
+        </attvalues>
+      </edge>
+      <edge source="P011" target="P009" id="23" weight="2">
+        <attvalues>
+          <attvalue for="7" value="Directed" />
+          <attvalue for="8" value="1518-07-19" />
+          <attvalue for="9" value="1521-08-26" />
+          <attvalue for="10" value="2" />
+          <attvalue for="11" value="0" />
+        </attvalues>
+      </edge>
+      <edge source="P012" target="P013" id="24" weight="5">
+        <attvalues>
+          <attvalue for="7" value="Directed" />
+          <attvalue for="8" value="1522-01-21" />
+          <attvalue for="9" value="1534-05-22" />
+          <attvalue for="10" value="5" />
+          <attvalue for="11" value="0" />
+        </attvalues>
+      </edge>
+      <edge source="P012" target="P014" id="25" weight="4">
+        <attvalues>
+          <attvalue for="7" value="Directed" />
+          <attvalue for="8" value="1526-07" />
+          <attvalue for="9" value="1535-10-17" />
+          <attvalue for="10" value="4" />
+          <attvalue for="11" value="0" />
+        </attvalues>
+      </edge>
+      <edge source="P012" target="P028" id="26" weight="3">
+        <attvalues>
+          <attvalue for="7" value="Directed" />
+          <attvalue for="8" value="1520-09-04" />
+          <attvalue for="9" value="1535-08-24" />
+          <attvalue for="10" value="3" />
+          <attvalue for="11" value="0" />
+        </attvalues>
+      </edge>
+      <edge source="P013" target="P012" id="27" weight="3">
+        <attvalues>
+          <attvalue for="7" value="Directed" />
+          <attvalue for="8" value="1524-04-22" />
+          <attvalue for="9" value="1530-06-09" />
+          <attvalue for="10" value="3" />
+          <attvalue for="11" value="0" />
+        </attvalues>
+      </edge>
+      <edge source="P014" target="P015" id="28" weight="3">
+        <attvalues>
+          <attvalue for="7" value="Directed" />
+          <attvalue for="8" value="1518-03-12" />
+          <attvalue for="9" value="1533-02-05" />
+          <attvalue for="10" value="3" />
+          <attvalue for="11" value="0" />
+        </attvalues>
+      </edge>
+      <edge source="P014" target="P012" id="29" weight="2">
+        <attvalues>
+          <attvalue for="7" value="Directed" />
+          <attvalue for="8" value="1528-10-24" />
+          <attvalue for="9" value="1531-11-04" />
+          <attvalue for="10" value="2" />
+          <attvalue for="11" value="0" />
+        </attvalues>
+      </edge>
+      <edge source="P015" target="P016" id="30" weight="5">
+        <attvalues>
+          <attvalue for="7" value="Directed" />
+          <attvalue for="8" value="1520-06-13" />
+          <attvalue for="9" value="1535-05-06" />
+          <attvalue for="10" value="4" />
+          <attvalue for="11" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="P015" target="P017" id="31" weight="3">
+        <attvalues>
+          <attvalue for="7" value="Directed" />
+          <attvalue for="8" value="1518-10-01" />
+          <attvalue for="9" value="1524-12-15" />
+          <attvalue for="10" value="3" />
+          <attvalue for="11" value="0" />
+        </attvalues>
+      </edge>
+      <edge source="P016" target="P015" id="32" weight="2">
+        <attvalues>
+          <attvalue for="7" value="Directed" />
+          <attvalue for="8" value="1519-08-07" />
+          <attvalue for="9" value="1534-07-27" />
+          <attvalue for="10" value="2" />
+          <attvalue for="11" value="0" />
+        </attvalues>
+      </edge>
+      <edge source="P017" target="P018" id="33" weight="7">
+        <attvalues>
+          <attvalue for="7" value="Directed" />
+          <attvalue for="8" value="1520-01-02" />
+          <attvalue for="9" value="1535-06-10" />
+          <attvalue for="10" value="7" />
+          <attvalue for="11" value="0" />
+        </attvalues>
+      </edge>
+      <edge source="P017" target="P019" id="34" weight="5">
+        <attvalues>
+          <attvalue for="7" value="Directed" />
+          <attvalue for="8" value="1518-11" />
+          <attvalue for="9" value="1533-10-25" />
+          <attvalue for="10" value="5" />
+          <attvalue for="11" value="0" />
+        </attvalues>
+      </edge>
+      <edge source="P017" target="P031" id="35" weight="4">
+        <attvalues>
+          <attvalue for="7" value="Directed" />
+          <attvalue for="8" value="1519-11-25" />
+          <attvalue for="9" value="1534-10-18" />
+          <attvalue for="10" value="4" />
+          <attvalue for="11" value="0" />
+        </attvalues>
+      </edge>
+      <edge source="P018" target="P020" id="36" weight="6">
+        <attvalues>
+          <attvalue for="7" value="Directed" />
+          <attvalue for="8" value="1519-04-27" />
+          <attvalue for="9" value="1534-03-20" />
+          <attvalue for="10" value="6" />
+          <attvalue for="11" value="0" />
+        </attvalues>
+      </edge>
+      <edge source="P018" target="P017" id="37" weight="4">
+        <attvalues>
+          <attvalue for="7" value="Directed" />
+          <attvalue for="8" value="1522-04-03" />
+          <attvalue for="9" value="1531-07-24" />
+          <attvalue for="10" value="4" />
+          <attvalue for="11" value="0" />
+        </attvalues>
+      </edge>
+      <edge source="P018" target="P010" id="38" weight="3">
+        <attvalues>
+          <attvalue for="7" value="Directed" />
+          <attvalue for="8" value="1526-01-23" />
+          <attvalue for="9" value="1532-03-10" />
+          <attvalue for="10" value="3" />
+          <attvalue for="11" value="0" />
+        </attvalues>
+      </edge>
+      <edge source="P019" target="P021" id="39" weight="4">
+        <attvalues>
+          <attvalue for="7" value="Directed" />
+          <attvalue for="8" value="1520-09-22" />
+          <attvalue for="9" value="1535-08-15" />
+          <attvalue for="10" value="4" />
+          <attvalue for="11" value="0" />
+        </attvalues>
+      </edge>
+      <edge source="P019" target="P017" id="40" weight="3">
+        <attvalues>
+          <attvalue for="7" value="Directed" />
+          <attvalue for="8" value="1526-10-05" />
+          <attvalue for="9" value="1532-12-19" />
+          <attvalue for="10" value="2" />
+          <attvalue for="11" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="P019" target="P002" id="41" weight="2">
+        <attvalues>
+          <attvalue for="7" value="Directed" />
+          <attvalue for="8" value="1524-07-13" />
+          <attvalue for="9" value="1527-08-20" />
+          <attvalue for="10" value="2" />
+          <attvalue for="11" value="0" />
+        </attvalues>
+      </edge>
+      <edge source="P020" target="P018" id="42" weight="3">
+        <attvalues>
+          <attvalue for="7" value="Directed" />
+          <attvalue for="8" value="1518-06-21" />
+          <attvalue for="9" value="1533-05-14" />
+          <attvalue for="10" value="3" />
+          <attvalue for="11" value="0" />
+        </attvalues>
+      </edge>
+      <edge source="P021" target="P022" id="43" weight="6">
+        <attvalues>
+          <attvalue for="7" value="Directed" />
+          <attvalue for="8" value="1519-11-16" />
+          <attvalue for="9" value="1534-10" />
+          <attvalue for="10" value="6" />
+          <attvalue for="11" value="0" />
+        </attvalues>
+      </edge>
+      <edge source="P021" target="P023" id="44" weight="5">
+        <attvalues>
+          <attvalue for="7" value="Directed" />
+          <attvalue for="8" value="1520-04-11" />
+          <attvalue for="9" value="1532-08-12" />
+          <attvalue for="10" value="5" />
+          <attvalue for="11" value="0" />
+        </attvalues>
+      </edge>
+      <edge source="P022" target="P024" id="45" weight="4">
+        <attvalues>
+          <attvalue for="7" value="Directed" />
+          <attvalue for="8" value="1524-10-13" />
+          <attvalue for="9" value="1533-01-07" />
+          <attvalue for="10" value="4" />
+          <attvalue for="11" value="0" />
+        </attvalues>
+      </edge>
+      <edge source="P022" target="P021" id="46" weight="3">
+        <attvalues>
+          <attvalue for="7" value="Directed" />
+          <attvalue for="8" value="1518-01-10" />
+          <attvalue for="9" value="1524-03-24" />
+          <attvalue for="10" value="2" />
+          <attvalue for="11" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="P023" target="P037" id="47" weight="3">
+        <attvalues>
+          <attvalue for="7" value="Directed" />
+          <attvalue for="8" value="1518-01-19" />
+          <attvalue for="9" value="1524-03-06" />
+          <attvalue for="10" value="3" />
+          <attvalue for="11" value="0" />
+        </attvalues>
+      </edge>
+      <edge source="P023" target="P021" id="48" weight="2">
+        <attvalues>
+          <attvalue for="7" value="Directed" />
+          <attvalue for="8" value="1522-07-12" />
+          <attvalue for="9" value="1525-08-19" />
+          <attvalue for="10" value="2" />
+          <attvalue for="11" value="0" />
+        </attvalues>
+      </edge>
+      <edge source="P024" target="P025" id="49" weight="3">
+        <attvalues>
+          <attvalue for="7" value="Directed" />
+          <attvalue for="8" value="1526-01-14" />
+          <attvalue for="9" value="1532-03-01" />
+          <attvalue for="10" value="3" />
+          <attvalue for="11" value="0" />
+        </attvalues>
+      </edge>
+      <edge source="P024" target="P004" id="50" weight="2">
+        <attvalues>
+          <attvalue for="7" value="Directed" />
+          <attvalue for="8" value="1528-01-15" />
+          <attvalue for="9" value="1531-02" />
+          <attvalue for="10" value="2" />
+          <attvalue for="11" value="0" />
+        </attvalues>
+      </edge>
+      <edge source="P025" target="P026" id="51" weight="5">
+        <attvalues>
+          <attvalue for="7" value="Directed" />
+          <attvalue for="8" value="1519-07-09" />
+          <attvalue for="9" value="1534-06-02" />
+          <attvalue for="10" value="5" />
+          <attvalue for="11" value="0" />
+        </attvalues>
+      </edge>
+      <edge source="P025" target="P027" id="52" weight="4">
+        <attvalues>
+          <attvalue for="7" value="Directed" />
+          <attvalue for="8" value="1520-12-04" />
+          <attvalue for="9" value="1535-11-24" />
+          <attvalue for="10" value="3" />
+          <attvalue for="11" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="P026" target="P028" id="53" weight="4">
+        <attvalues>
+          <attvalue for="7" value="Directed" />
+          <attvalue for="8" value="1518-04-19" />
+          <attvalue for="9" value="1527-07-13" />
+          <attvalue for="10" value="4" />
+          <attvalue for="11" value="0" />
+        </attvalues>
+      </edge>
+      <edge source="P026" target="P025" id="54" weight="2">
+        <attvalues>
+          <attvalue for="7" value="Directed" />
+          <attvalue for="8" value="1530-07-16" />
+          <attvalue for="9" value="1533-08-23" />
+          <attvalue for="10" value="2" />
+          <attvalue for="11" value="0" />
+        </attvalues>
+      </edge>
+      <edge source="P027" target="P025" id="55" weight="2">
+        <attvalues>
+          <attvalue for="7" value="Directed" />
+          <attvalue for="8" value="1519-02-25" />
+          <attvalue for="9" value="1534-01" />
+          <attvalue for="10" value="2" />
+          <attvalue for="11" value="0" />
+        </attvalues>
+      </edge>
+      <edge source="P028" target="P029" id="56" weight="5">
+        <attvalues>
+          <attvalue for="7" value="Directed" />
+          <attvalue for="8" value="1520-07-20" />
+          <attvalue for="9" value="1532-11-21" />
+          <attvalue for="10" value="5" />
+          <attvalue for="11" value="0" />
+        </attvalues>
+      </edge>
+      <edge source="P028" target="P030" id="57" weight="4">
+        <attvalues>
+          <attvalue for="7" value="Directed" />
+          <attvalue for="8" value="1524-01-22" />
+          <attvalue for="9" value="1533-04-16" />
+          <attvalue for="10" value="4" />
+          <attvalue for="11" value="0" />
+        </attvalues>
+      </edge>
+      <edge source="P029" target="P028" id="58" weight="2">
+        <attvalues>
+          <attvalue for="7" value="Directed" />
+          <attvalue for="8" value="1522-10-21" />
+          <attvalue for="9" value="1525-11-01" />
+          <attvalue for="10" value="2" />
+          <attvalue for="11" value="0" />
+        </attvalues>
+      </edge>
+      <edge source="P029" target="P040" id="59" weight="1">
+        <attvalues>
+          <attvalue for="7" value="Directed" />
+          <attvalue for="8" value="1534-01-27" />
+          <attvalue for="9" value="1534-01-27" />
+          <attvalue for="10" value="1" />
+          <attvalue for="11" value="0" />
+        </attvalues>
+      </edge>
+      <edge source="P030" target="P031" id="60" weight="4">
+        <attvalues>
+          <attvalue for="7" value="Directed" />
+          <attvalue for="8" value="1519-10-18" />
+          <attvalue for="9" value="1534-09-11" />
+          <attvalue for="10" value="3" />
+          <attvalue for="11" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="P030" target="P018" id="61" weight="2">
+        <attvalues>
+          <attvalue for="7" value="Directed" />
+          <attvalue for="8" value="1528-04-24" />
+          <attvalue for="9" value="1531-05-04" />
+          <attvalue for="10" value="1" />
+          <attvalue for="11" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="P030" target="P028" id="62" weight="2">
+        <attvalues>
+          <attvalue for="7" value="Directed" />
+          <attvalue for="8" value="1526-04" />
+          <attvalue for="9" value="1529-05-03" />
+          <attvalue for="10" value="2" />
+          <attvalue for="11" value="0" />
+        </attvalues>
+      </edge>
+      <edge source="P031" target="P032" id="63" weight="6">
+        <attvalues>
+          <attvalue for="7" value="Directed" />
+          <attvalue for="8" value="1518-12-12" />
+          <attvalue for="9" value="1533-11-05" />
+          <attvalue for="10" value="6" />
+          <attvalue for="11" value="0" />
+        </attvalues>
+      </edge>
+      <edge source="P031" target="P033" id="64" weight="5">
+        <attvalues>
+          <attvalue for="7" value="Directed" />
+          <attvalue for="8" value="1519-05-07" />
+          <attvalue for="9" value="1534-04-27" />
+          <attvalue for="10" value="5" />
+          <attvalue for="11" value="0" />
+        </attvalues>
+      </edge>
+      <edge source="P031" target="P005" id="65" weight="3">
+        <attvalues>
+          <attvalue for="7" value="Directed" />
+          <attvalue for="8" value="1520-04-20" />
+          <attvalue for="9" value="1526-06" />
+          <attvalue for="10" value="3" />
+          <attvalue for="11" value="0" />
+        </attvalues>
+      </edge>
+      <edge source="P032" target="P034" id="66" weight="4">
+        <attvalues>
+          <attvalue for="7" value="Directed" />
+          <attvalue for="8" value="1520-10-02" />
+          <attvalue for="9" value="1529-01-23" />
+          <attvalue for="10" value="3" />
+          <attvalue for="11" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="P032" target="P031" id="67" weight="3">
+        <attvalues>
+          <attvalue for="7" value="Directed" />
+          <attvalue for="8" value="1520-03-13" />
+          <attvalue for="9" value="1535-02-06" />
+          <attvalue for="10" value="3" />
+          <attvalue for="11" value="0" />
+        </attvalues>
+      </edge>
+      <edge source="P033" target="P019" id="68" weight="3">
+        <attvalues>
+          <attvalue for="7" value="Directed" />
+          <attvalue for="8" value="1522-07-21" />
+          <attvalue for="9" value="1528-09-08" />
+          <attvalue for="10" value="3" />
+          <attvalue for="11" value="0" />
+        </attvalues>
+      </edge>
+      <edge source="P033" target="P031" id="69" weight="3">
+        <attvalues>
+          <attvalue for="7" value="Directed" />
+          <attvalue for="8" value="1518-07-01" />
+          <attvalue for="9" value="1524-09-15" />
+          <attvalue for="10" value="3" />
+          <attvalue for="11" value="0" />
+        </attvalues>
+      </edge>
+      <edge source="P034" target="P035" id="70" weight="3">
+        <attvalues>
+          <attvalue for="7" value="Directed" />
+          <attvalue for="8" value="1522-01-03" />
+          <attvalue for="9" value="1528-03-17" />
+          <attvalue for="10" value="3" />
+          <attvalue for="11" value="0" />
+        </attvalues>
+      </edge>
+      <edge source="P035" target="P036" id="71" weight="5">
+        <attvalues>
+          <attvalue for="7" value="Directed" />
+          <attvalue for="8" value="1518-08" />
+          <attvalue for="9" value="1533-07-25" />
+          <attvalue for="10" value="5" />
+          <attvalue for="11" value="0" />
+        </attvalues>
+      </edge>
+      <edge source="P035" target="P037" id="72" weight="3">
+        <attvalues>
+          <attvalue for="7" value="Directed" />
+          <attvalue for="8" value="1528-10-06" />
+          <attvalue for="9" value="1534-12-20" />
+          <attvalue for="10" value="3" />
+          <attvalue for="11" value="0" />
+        </attvalues>
+      </edge>
+      <edge source="P036" target="P035" id="73" weight="2">
+        <attvalues>
+          <attvalue for="7" value="Directed" />
+          <attvalue for="8" value="1526-07-05" />
+          <attvalue for="9" value="1529-08-12" />
+          <attvalue for="10" value="2" />
+          <attvalue for="11" value="0" />
+        </attvalues>
+      </edge>
+      <edge source="P036" target="P016" id="74" weight="1">
+        <attvalues>
+          <attvalue for="7" value="Directed" />
+          <attvalue for="8" value="1518-04-01" />
+          <attvalue for="9" value="1518-04-01" />
+          <attvalue for="10" value="1" />
+          <attvalue for="11" value="0" />
+        </attvalues>
+      </edge>
+      <edge source="P037" target="P038" id="75" weight="5">
+        <attvalues>
+          <attvalue for="7" value="Directed" />
+          <attvalue for="8" value="1518-03-21" />
+          <attvalue for="9" value="1533-02-14" />
+          <attvalue for="10" value="5" />
+          <attvalue for="11" value="0" />
+        </attvalues>
+      </edge>
+      <edge source="P037" target="P039" id="76" weight="4">
+        <attvalues>
+          <attvalue for="7" value="Directed" />
+          <attvalue for="8" value="1519-08-16" />
+          <attvalue for="9" value="1534-07-09" />
+          <attvalue for="10" value="3" />
+          <attvalue for="11" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="P038" target="P037" id="77" weight="2">
+        <attvalues>
+          <attvalue for="7" value="Directed" />
+          <attvalue for="8" value="1532-04-08" />
+          <attvalue for="9" value="1535-05-15" />
+          <attvalue for="10" value="2" />
+          <attvalue for="11" value="0" />
+        </attvalues>
+      </edge>
+      <edge source="P039" target="P040" id="78" weight="3">
+        <attvalues>
+          <attvalue for="7" value="Directed" />
+          <attvalue for="8" value="1520-01-11" />
+          <attvalue for="9" value="1526-03-25" />
+          <attvalue for="10" value="3" />
+          <attvalue for="11" value="0" />
+        </attvalues>
+      </edge>
+      <edge source="P039" target="P037" id="79" weight="2">
+        <attvalues>
+          <attvalue for="7" value="Directed" />
+          <attvalue for="8" value="1518-10" />
+          <attvalue for="9" value="1521-11-17" />
+          <attvalue for="10" value="2" />
+          <attvalue for="11" value="0" />
+        </attvalues>
+      </edge>
+      <edge source="P040" target="P015" id="80" weight="2">
+        <attvalues>
+          <attvalue for="7" value="Directed" />
+          <attvalue for="8" value="1524-10-22" />
+          <attvalue for="9" value="1527-11-02" />
+          <attvalue for="10" value="2" />
+          <attvalue for="11" value="0" />
+        </attvalues>
+      </edge>
+      <edge source="U001" target="P001" id="81" weight="1">
+        <attvalues>
+          <attvalue for="7" value="Directed" />
+          <attvalue for="8" value="1532-10-26" />
+          <attvalue for="9" value="1532-10-26" />
+          <attvalue for="10" value="1" />
+          <attvalue for="11" value="0" />
+        </attvalues>
+      </edge>
+    </edges>
+  </graph>
+</gexf>
